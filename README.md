@@ -15,7 +15,6 @@ You can download HeightMap from Mapbox provided data.
                 feature.Extent.MaxX, feature.Extent.MaxY,
                 output_folder, image_dimension
                 );
-
             if (heightMapCreator.getHeightMap())
                 Console.WriteLine("Done!");
 3. If you dont have shape file use Way 2. Just provide center coord (ex. Lang:90.634673, Lat:24.8734975) and provide your desire width in KM (Top-left to Top-Right).        
