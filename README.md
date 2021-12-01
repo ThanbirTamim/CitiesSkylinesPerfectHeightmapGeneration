@@ -3,7 +3,7 @@
 You can download HeightMap from Mapbox provided data.
 
 ## Implementation 
-1. Add "Dependency" folder's path as Environment Variable in your PC.
+1. Unzip "oraociei12.zip" into Dependency folder. Then add "Dependency" folder's path as Environment Variable in your PC.
 2. Provide a Geographic Extent as a shape file if you have (Way 1). 
 
             var feature = FeatureSet.Open(@"D:\3DTerrainInfoGenerationProject\BuildingProject\Resource\Extent.shp");
