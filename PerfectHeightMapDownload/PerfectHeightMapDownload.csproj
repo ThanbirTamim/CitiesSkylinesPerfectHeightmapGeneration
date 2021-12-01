@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0275A6F-56A2-45CB-BC43-57A912F184AA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PerfectHeightMapDownload</RootNamespace>
+    <AssemblyName>PerfectHeightMapDownload</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotSpatial.Analysis">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Analysis.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Compatibility">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Controls">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Data">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Extensions">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Mono">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Mono.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Positioning">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Positioning.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Projections">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Projections.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Serialization">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Symbology">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Symbology.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Tools">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Topology">
+      <HintPath>..\..\..\IWGSS\SabinzoTerrainEditor\SabinzoTerrainEditor\bin\Release\DotSpatial.Topology.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoJSON.Net">
+      <HintPath>..\..\..\MapBoxProject\Turf.Sharp\TurfCS\bin\Debug\GeoJSON.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MapBoxProject\Turf.Sharp\TurfCS\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TurfCS">
+      <HintPath>..\..\..\MapBoxProject\Turf.Sharp\TurfCS\bin\Debug\TurfCS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GeometryHelper.cs" />
+    <Compile Include="HeightMapCreator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Dependency\epsg_tr.bat" />
+    <None Include="Dependency\epsg_tr.py" />
+    <None Include="Dependency\esri2wkt.bat" />
+    <None Include="Dependency\esri2wkt.py" />
+    <None Include="Dependency\fftw-wisdom-to-conf" />
+    <None Include="Dependency\gcps2vec.bat" />
+    <None Include="Dependency\gcps2vec.py" />
+    <None Include="Dependency\gcps2wld.bat" />
+    <None Include="Dependency\gcps2wld.py" />
+    <None Include="Dependency\gdal2tiles.bat" />
+    <None Include="Dependency\gdal2tiles.py" />
+    <None Include="Dependency\gdal2xyz.bat" />
+    <None Include="Dependency\gdal2xyz.py" />
+    <None Include="Dependency\gdalchksum.bat" />
+    <None Include="Dependency\gdalchksum.py" />
+    <None Include="Dependency\gdalcompare.bat" />
+    <None Include="Dependency\gdalcompare.py" />
+    <None Include="Dependency\gdalident.bat" />
+    <None Include="Dependency\gdalident.py" />
+    <None Include="Dependency\gdalimport.bat" />
+    <None Include="Dependency\gdalimport.py" />
+    <None Include="Dependency\gdalmove.bat" />
+    <None Include="Dependency\gdalmove.py" />
+    <None Include="Dependency\gdal_auth.bat" />
+    <None Include="Dependency\gdal_auth.py" />
+    <None Include="Dependency\gdal_calc.bat" />
+    <None Include="Dependency\gdal_calc.py" />
+    <None Include="Dependency\gdal_edit.bat" />
+    <None Include="Dependency\gdal_edit.py" />
+    <None Include="Dependency\gdal_fillnodata.bat" />
+    <None Include="Dependency\gdal_fillnodata.py" />
+    <None Include="Dependency\gdal_merge.bat" />
+    <None Include="Dependency\gdal_merge.py" />
+    <None Include="Dependency\gdal_pansharpen.bat" />
+    <None Include="Dependency\gdal_pansharpen.py" />
+    <None Include="Dependency\gdal_polygonize.bat" />
+    <None Include="Dependency\gdal_polygonize.py" />
+    <None Include="Dependency\gdal_proximity.bat" />
+    <None Include="Dependency\gdal_proximity.py" />
+    <None Include="Dependency\gdal_retile.bat" />
+    <None Include="Dependency\gdal_retile.py" />
+    <None Include="Dependency\gdal_sieve.bat" />
+    <None Include="Dependency\gdal_sieve.py" />
+    <None Include="Dependency\grass76.bat" />
+    <None Include="Dependency\gssetgs.bat" />
+    <None Include="Dependency\icu-config" />
+    <None Include="Dependency\laszip.dll.manifest" />
+    <None Include="Dependency\liblas.bat" />
+    <None Include="Dependency\liblas.bat.tmpl" />
+    <None Include="Dependency\make-bat-for-py.bat" />
+    <None Include="Dependency\mkgraticule.bat" />
+    <None Include="Dependency\mkgraticule.py" />
+    <None Include="Dependency\nc-config" />
+    <None Include="Dependency\o-help.bat" />
+    <None Include="Dependency\o4w_env.bat" />
+    <None Include="Dependency\ogrmerge.bat" />
+    <None Include="Dependency\ogrmerge.py" />
+    <None Include="Dependency\pct2rgb.bat" />
+    <None Include="Dependency\pct2rgb.py" />
+    <None Include="Dependency\ps2pdf" />
+    <None Include="Dependency\ps2pdf.bat" />
+    <None Include="Dependency\ps2pdf.cmd" />
+    <None Include="Dependency\ps2pdf12" />
+    <None Include="Dependency\ps2pdf12.bat" />
+    <None Include="Dependency\ps2pdf12.cmd" />
+    <None Include="Dependency\ps2pdf13" />
+    <None Include="Dependency\ps2pdf13.bat" />
+    <None Include="Dependency\ps2pdf13.cmd" />
+    <None Include="Dependency\ps2pdf14" />
+    <None Include="Dependency\ps2pdf14.bat" />
+    <None Include="Dependency\ps2pdf14.cmd" />
+    <None Include="Dependency\ps2pdfwr" />
+    <None Include="Dependency\ps2pdfxx.bat" />
+    <None Include="Dependency\py3_env.bat" />
+    <None Include="Dependency\python-qgis.bat" />
+    <None Include="Dependency\python-qgis.bat.tmpl" />
+    <None Include="Dependency\qgis-bin-g7.env" />
+    <None Include="Dependency\qgis-bin-g7.vars" />
+    <None Include="Dependency\qgis-bin.env" />
+    <None Include="Dependency\qgis-bin.vars" />
+    <None Include="Dependency\qgis-designer.bat" />
+    <None Include="Dependency\qgis-designer.bat.tmpl" />
+    <None Include="Dependency\qgis-grass7.bat" />
+    <None Include="Dependency\qgis-grass7.bat.tmpl" />
+    <None Include="Dependency\qgis.bat" />
+    <None Include="Dependency\qgis.bat.tmpl" />
+    <None Include="Dependency\qt.conf" />
+    <None Include="Dependency\qt5.conf" />
+    <None Include="Dependency\qt5_env.bat" />
+    <None Include="Dependency\rgb2pct.bat" />
+    <None Include="Dependency\rgb2pct.py" />
+    <None Include="Dependency\saga-ltr_gui.bat" />
+    <None Include="Dependency\setup-test.bat" />
+    <None Include="Dependency\setup-test.bat.tmpl" />
+    <None Include="Dependency\setup.bat" />
+    <None Include="Dependency\setup.bat.tmpl" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dependency\adrg.dll" />
+    <Content Include="Dependency\avcexport.exe" />
+    <Content Include="Dependency\avcimport.exe" />
+    <Content Include="Dependency\boost_atomic-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_chrono-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_container-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_context-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_coroutine-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_date_time-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_filesystem-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_graph-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_iostreams-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_locale-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_log-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_log_setup-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_math_c99-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_math_c99f-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_math_c99l-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_math_tr1-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_math_tr1f-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_math_tr1l-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_prg_exec_monitor-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_program_options-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_random-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_regex-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_serialization-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_signals-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_system-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_thread-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_timer-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_unit_test_framework-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_wave-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\boost_wserialization-vc110-mt-1_56.dll" />
+    <Content Include="Dependency\cairo.dll" />
+    <Content Include="Dependency\cblas.dll" />
+    <Content Include="Dependency\cct.exe" />
+    <Content Include="Dependency\charset-1.dll" />
+    <Content Include="Dependency\cs2cs.exe" />
+    <Content Include="Dependency\curl.exe" />
+    <Content Include="Dependency\curl.pdb" />
+    <Content Include="Dependency\derb.exe" />
+    <Content Include="Dependency\dllupdate.exe" />
+    <Content Include="Dependency\dtcanada.dll" />
+    <Content Include="Dependency\dted.dll" />
+    <Content Include="Dependency\dtusa.dll" />
+    <Content Include="Dependency\exiv2.dll" />
+    <Content Include="Dependency\expat.dll" />
+    <Content Include="Dependency\fax2ps.exe" />
+    <Content Include="Dependency\fax2tiff.exe" />
+    <Content Include="Dependency\fftw-wisdom.exe" />
+    <Content Include="Dependency\freexl.dll" />
+    <Content Include="Dependency\gdal111.dll" />
+    <Content Include="Dependency\gdal204.dll" />
+    <Content Include="Dependency\gdaladdo.exe" />
+    <Content Include="Dependency\gdalbuildvrt.exe" />
+    <Content Include="Dependency\gdaldem.exe" />
+    <Content Include="Dependency\gdalenhance.exe" />
+    <Content Include="Dependency\gdalinfo.exe" />
+    <Content Include="Dependency\gdallocationinfo.exe" />
+    <Content Include="Dependency\gdalmanage.exe" />
+    <Content Include="Dependency\gdalserver.exe" />
+    <Content Include="Dependency\gdalsrsinfo.exe" />
+    <Content Include="Dependency\gdaltindex.exe" />
+    <Content Include="Dependency\gdaltransform.exe" />
+    <Content Include="Dependency\gdalwarp.exe" />
+    <Content Include="Dependency\gdalplugins\gdal_ECW_JP2ECW.dll" />
+    <Content Include="Dependency\gdalplugins\gdal_GEOR.dll" />
+    <Content Include="Dependency\gdalplugins\gdal_MG4Lidar.dll" />
+    <Content Include="Dependency\gdalplugins\gdal_MrSID.dll" />
+    <Content Include="Dependency\gdalplugins\ogr_OCI.dll" />
+    <Content Include="Dependency\gdalplugins\ogr_SOSI.dll" />
+    <Content Include="Dependency\gdal_contour.exe" />
+    <Content Include="Dependency\gdal_grid.exe" />
+    <Content Include="Dependency\gdal_rasterize.exe" />
+    <Content Include="Dependency\gdal_translate.exe" />
+    <Content Include="Dependency\genbrk.exe" />
+    <Content Include="Dependency\genccode.exe" />
+    <Content Include="Dependency\gencfu.exe" />
+    <Content Include="Dependency\gencmn.exe" />
+    <Content Include="Dependency\gencnval.exe" />
+    <Content Include="Dependency\gendict.exe" />
+    <Content Include="Dependency\gennorm2.exe" />
+    <Content Include="Dependency\genrb.exe" />
+    <Content Include="Dependency\gensprep.exe" />
+    <Content Include="Dependency\geod.exe" />
+    <Content Include="Dependency\geos.dll" />
+    <Content Include="Dependency\geos_c.dll" />
+    <Content Include="Dependency\geotifcp.exe" />
+    <Content Include="Dependency\geotiff.dll" />
+    <Content Include="Dependency\gie.exe" />
+    <Content Include="Dependency\gif2h5.exe" />
+    <Content Include="Dependency\gnmanalyse.exe" />
+    <Content Include="Dependency\gnmmanage.exe" />
+    <Content Include="Dependency\gpsbabel.exe" />
+    <Content Include="Dependency\gsdll32.dll" />
+    <Content Include="Dependency\gsl.dll" />
+    <Content Include="Dependency\gswin32c.exe" />
+    <Content Include="Dependency\h52gif.exe" />
+    <Content Include="Dependency\h5clear.exe" />
+    <Content Include="Dependency\h5copy-shared.exe" />
+    <Content Include="Dependency\h5copy.exe" />
+    <Content Include="Dependency\h5debug.exe" />
+    <Content Include="Dependency\h5diff-shared.exe" />
+    <Content Include="Dependency\h5diff.exe" />
+    <Content Include="Dependency\h5dump-shared.exe" />
+    <Content Include="Dependency\h5dump.exe" />
+    <Content Include="Dependency\h5format_convert.exe" />
+    <Content Include="Dependency\h5import.exe" />
+    <Content Include="Dependency\h5jam.exe" />
+    <Content Include="Dependency\h5ls-shared.exe" />
+    <Content Include="Dependency\h5ls.exe" />
+    <Content Include="Dependency\h5mkgrp.exe" />
+    <Content Include="Dependency\h5repack-shared.exe" />
+    <Content Include="Dependency\h5repack.exe" />
+    <Content Include="Dependency\h5repart.exe" />
+    <Content Include="Dependency\h5stat-shared.exe" />
+    <Content Include="Dependency\h5stat.exe" />
+    <Content Include="Dependency\h5unjam.exe" />
+    <Content Include="Dependency\h5watch.exe" />
+    <Content Include="Dependency\hdf5.dll" />
+    <Content Include="Dependency\hdf5_cpp.dll" />
+    <Content Include="Dependency\hdf5_hl.dll" />
+    <Content Include="Dependency\hdf5_hl_cpp.dll" />
+    <Content Include="Dependency\hdf5_tools.dll" />
+    <Content Include="Dependency\iconv-2.dll" />
+    <Content Include="Dependency\iconv.dll" />
+    <Content Include="Dependency\icudt.dll" />
+    <Content Include="Dependency\icudt56.dll" />
+    <Content Include="Dependency\icuin.dll" />
+    <Content Include="Dependency\icuin56.dll" />
+    <Content Include="Dependency\icuinfo.exe" />
+    <Content Include="Dependency\icuio.dll" />
+    <Content Include="Dependency\icuio56.dll" />
+    <Content Include="Dependency\icule.dll" />
+    <Content Include="Dependency\icule56.dll" />
+    <Content Include="Dependency\iculx.dll" />
+    <Content Include="Dependency\iculx56.dll" />
+    <Content Include="Dependency\icupkg.exe" />
+    <Content Include="Dependency\icutest.dll" />
+    <Content Include="Dependency\icutest56.dll" />
+    <Content Include="Dependency\icutu.dll" />
+    <Content Include="Dependency\icutu56.dll" />
+    <Content Include="Dependency\icuuc.dll" />
+    <Content Include="Dependency\icuuc56.dll" />
+    <Content Include="Dependency\jpeg.dll" />
+    <Content Include="Dependency\jpeg12.dll" />
+    <Content Include="Dependency\las2las.exe" />
+    <Content Include="Dependency\las2ogr.exe" />
+    <Content Include="Dependency\las2txt.exe" />
+    <Content Include="Dependency\lasblock.exe" />
+    <Content Include="Dependency\lasinfo.exe" />
+    <Content Include="Dependency\laszip.dll" />
+    <Content Include="Dependency\libcurl.dll" />
+    <Content Include="Dependency\libeay32.dll" />
+    <Content Include="Dependency\libfftw3-3.dll" />
+    <Content Include="Dependency\libiconv-2.dll" />
+    <Content Include="Dependency\libintl-8.dll" />
+    <Content Include="Dependency\liblas.dll" />
+    <Content Include="Dependency\liblas_c.dll" />
+    <Content Include="Dependency\liblzma.dll" />
+    <Content Include="Dependency\libmysql.dll" />
+    <Content Include="Dependency\libpng16.dll" />
+    <Content Include="Dependency\libpq.dll" />
+    <Content Include="Dependency\libtiff.dll" />
+    <Content Include="Dependency\libxml2.dll" />
+    <Content Include="Dependency\listgeo.exe" />
+    <Content Include="Dependency\lti_dsdk_9.5.dll" />
+    <Content Include="Dependency\lti_dsdk_cdll_9.5.dll" />
+    <Content Include="Dependency\lti_lidar_dsdk_1.1.dll" />
+    <Content Include="Dependency\lwgeom.dll" />
+    <Content Include="Dependency\makeconv.exe" />
+    <Content Include="Dependency\mod_spatialite.dll" />
+    <Content Include="Dependency\msvcp100.dll" />
+    <Content Include="Dependency\msvcp110.dll" />
+    <Content Include="Dependency\msvcr100.dll" />
+    <Content Include="Dependency\msvcr110.dll" />
+    <Content Include="Dependency\nad2bin.exe" />
+    <Content Include="Dependency\nccopy.exe" />
+    <Content Include="Dependency\ncdump.exe" />
+    <Content Include="Dependency\ncgen.exe" />
+    <Content Include="Dependency\ncgen3.exe" />
+    <Content Include="Dependency\NCSEcw.dll" />
+    <Content Include="Dependency\nearblack.exe" />
+    <Content Include="Dependency\netcdf.dll" />
+    <Content Include="Dependency\nircmd.exe" />
+    <Content Include="Dependency\nircmdc.exe" />
+    <Content Include="Dependency\oci.dll" />
+    <Content Include="Dependency\ogdi.dll" />
+    <Content Include="Dependency\ogr2ogr.exe" />
+    <Content Include="Dependency\ogrinfo.exe" />
+    <Content Include="Dependency\ogrlineref.exe" />
+    <Content Include="Dependency\ogrtindex.exe" />
+    <Content Include="Dependency\opencl.dll" />
+    <Content Include="Dependency\openjp2.dll" />
+    <Content Include="Dependency\oraociei12.dll" />
+    <Content Include="Dependency\oraons.dll" />
+    <Content Include="Dependency\osgeo4w-setup.exe" />
+    <Content Include="Dependency\pal2rgb.exe" />
+    <Content Include="Dependency\pdcurses.dll" />
+    <Content Include="Dependency\pkgdata.exe" />
+    <Content Include="Dependency\ppm2tiff.exe" />
+    <Content Include="Dependency\proj.dll" />
+    <Content Include="Dependency\proj.exe" />
+    <Content Include="Dependency\proj_5_2.dll" />
+    <Content Include="Dependency\psql.exe" />
+    <Content Include="Dependency\python.exe" />
+    <Content Include="Dependency\python27.dll" />
+    <Content Include="Dependency\python3.dll" />
+    <Content Include="Dependency\python3.exe" />
+    <Content Include="Dependency\python37.dll" />
+    <Content Include="Dependency\pythoncom27.dll" />
+    <Content Include="Dependency\pythoncomloader27.dll" />
+    <Content Include="Dependency\pythonw.exe" />
+    <Content Include="Dependency\pythonw3.exe" />
+    <Content Include="Dependency\pywintypes27.dll" />
+    <Content Include="Dependency\qgis-bin-g7.exe" />
+    <Content Include="Dependency\qgis-bin.exe" />
+    <Content Include="Dependency\raw2tiff.exe" />
+    <Content Include="Dependency\remote.dll" />
+    <Content Include="Dependency\rpf.dll" />
+    <Content Include="Dependency\skeleton.dll" />
+    <Content Include="Dependency\spatialindex-64.dll" />
+    <Content Include="Dependency\spatialindex_c-64.dll" />
+    <Content Include="Dependency\spatialite.dll" />
+    <Content Include="Dependency\sqlite3.dll" />
+    <Content Include="Dependency\sqlite3.exe" />
+    <Content Include="Dependency\ssleay32.dll" />
+    <Content Include="Dependency\szip.dll" />
+    <Content Include="Dependency\tbb.dll" />
+    <Content Include="Dependency\testepsg.exe" />
+    <Content Include="Dependency\textreplace.exe" />
+    <Content Include="Dependency\tiff.dll" />
+    <Content Include="Dependency\tiff2bw.exe" />
+    <Content Include="Dependency\tiff2pdf.exe" />
+    <Content Include="Dependency\tiff2ps.exe" />
+    <Content Include="Dependency\tiff2rgba.exe" />
+    <Content Include="Dependency\tiffcmp.exe" />
+    <Content Include="Dependency\tiffcp.exe" />
+    <Content Include="Dependency\tiffcrop.exe" />
+    <Content Include="Dependency\tiffdither.exe" />
+    <Content Include="Dependency\tiffdump.exe" />
+    <Content Include="Dependency\tiffinfo.exe" />
+    <Content Include="Dependency\tiffmedian.exe" />
+    <Content Include="Dependency\tiffset.exe" />
+    <Content Include="Dependency\tiffsplit.exe" />
+    <Content Include="Dependency\ts2las.exe" />
+    <Content Include="Dependency\txt2las.exe" />
+    <Content Include="Dependency\uconv.exe" />
+    <Content Include="Dependency\vcredist_2015_x64.exe" />
+    <Content Include="Dependency\vrf.dll" />
+    <Content Include="Dependency\xerces-c_3_1.dll" />
+    <Content Include="Dependency\xerces-c_3_2.dll" />
+    <Content Include="Dependency\xmlcatalog.exe" />
+    <Content Include="Dependency\xmllint.exe" />
+    <Content Include="Dependency\xmlwf.exe" />
+    <Content Include="Dependency\xxmklink.exe" />
+    <Content Include="Dependency\zip.dll" />
+    <Content Include="Dependency\zlib1.dll" />
+    <Content Include="Dependency\zstd.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
